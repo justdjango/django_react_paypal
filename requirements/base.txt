@@ -4,7 +4,6 @@ Pillow==8.3.1  # https://github.com/python-pillow/Pillow
 argon2-cffi==20.1.0  # https://github.com/hynek/argon2_cffi
 redis==3.5.3  # https://github.com/andymccurdy/redis-py
 hiredis==2.0.0  # https://github.com/redis/hiredis-py
-dj-paypal==0.15.3  # https://github.com/HearthSim/dj-paypal
 paypalrestsdk==1.13.1  # https://github.com/paypal/PayPal-Python-SDK
 
 # Django
