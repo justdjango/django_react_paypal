@@ -1,0 +1,33 @@
+body {
+  background-color: #fdf1ec;
+} 
+
+h1, img {
+  margin: 0;
+  padding: 0;
+}
+
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  max-width: 300px;
+  margin: auto;
+  text-align: center;
+  font-family: arial;
+}
+
+.card h1, p {
+  color: #474747;
+}
+
+.card-details {
+  background-color: #ffffff;
+  padding-bottom: 10px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+.price {
+  color: grey;
+  font-size: 22px;
+}
+
