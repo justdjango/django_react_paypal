@@ -13,7 +13,7 @@
 
 This is a tutorial for integrating PayPal with Django and React.
 
-This project was bootstrapped with Cookiecutter Django.
+This project was bootstrapped with [Cookiecutter Django](https://github.com/pydanny/cookiecutter-django).
 
 ## Running the Project
 
