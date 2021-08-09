@@ -70,8 +70,7 @@ THIRD_PARTY_APPS = [
     "allauth.socialaccount",
     "rest_framework",
     "rest_framework.authtoken",
-    "corsheaders",
-    "djpaypal"
+    "corsheaders"
 ]
 
 LOCAL_APPS = [
