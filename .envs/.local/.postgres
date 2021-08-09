@@ -1,0 +1,7 @@
+# PostgreSQL
+# ------------------------------------------------------------------------------
+POSTGRES_HOST=postgres
+POSTGRES_PORT=5432
+POSTGRES_DB=django_react_paypal
+POSTGRES_USER=zVrQKfAwckrooKTHHZHQNGbmJhmDtNps
+POSTGRES_PASSWORD=5k8P5nS87LNWzeVk9Nr4SdEroqO4tU2MR6QRFM8VZKmtK6m8CLiY62DMoKYKI9uU

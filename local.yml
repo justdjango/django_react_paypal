@@ -1,0 +1,63 @@
+version: '3'
+
+volumes:
+  local_postgres_data: {}
+  local_postgres_data_backups: {}
+
+services:
+  django:
+    build:
+      context: .
+      dockerfile: ./compose/local/django/Dockerfile
+    image: django_react_paypal_local_django
+    container_name: django_react_paypal_django
+    depends_on:
+      - postgres
+    volumes:
+      - .:/app:z
+    env_file:
+      - ./.envs/.local/.django
+      - ./.envs/.local/.postgres
+    ports:
+      - "8000:8000"
+    command: /start
+
+  react:
+    build:
+      context: ./django_react_paypal/frontend
+      dockerfile: ./compose/local/Dockerfile
+      target: development
+    image: django_react_paypal_local_react
+    container_name: django_react_paypal_react
+    volumes:
+      - ./django_react_paypal/frontend/src:/app/src
+    ports:
+      - 3000:3000
+
+  postgres:
+    build:
+      context: .
+      dockerfile: ./compose/production/postgres/Dockerfile
+    image: django_react_paypal_production_postgres
+    container_name: django_react_paypal_postgres
+    volumes:
+      - local_postgres_data:/var/lib/postgresql/data:Z
+      - local_postgres_data_backups:/backups:z
+    env_file:
+      - ./.envs/.local/.postgres
+
+  docs:
+    image: django_react_paypal_local_docs
+    container_name: django_react_paypal_docs
+    build:
+      context: .
+      dockerfile: ./compose/local/docs/Dockerfile
+    env_file:
+      - ./.envs/.local/.django
+    volumes:
+      - ./docs:/docs:z
+      - ./config:/app/config:z
+      - ./django_react_paypal:/app/django_react_paypal:z
+    ports:
+      - "7000:7000"
+    command: /start-docs
